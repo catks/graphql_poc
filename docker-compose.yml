@@ -1,0 +1,28 @@
+version: "3"
+
+volumes:
+  rabbitmq-data:
+    external: false
+
+services:
+  app:
+    build: .
+    command: "rails server -p 3010 -b '0.0.0.0'"
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - "3010:3010"
+    depends_on:
+      - db
+    networks:
+      - default
+      - mssqlservervagas_default
+    stdin_open: true
+    tty: true
+
+  db:
+    image: postgres
+
+networks:
+  mssqlservervagas_default:
+    external: true
