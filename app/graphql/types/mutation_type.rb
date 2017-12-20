@@ -3,4 +3,5 @@ Types::MutationType = GraphQL::ObjectType.define do
 
   field :criaCargo, function: Resolvers::CriaCargo.new
   field :apagaCargo, function: Resolvers::ApagaCargo.new
+  field :atualizaCargo, function: Resolvers::AtualizaCargo.new
 end

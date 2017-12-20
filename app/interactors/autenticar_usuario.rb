@@ -1,4 +1,4 @@
-class AutorizaUsuario
+class AutenticarUsuario
   include Interactor
 
   def call
