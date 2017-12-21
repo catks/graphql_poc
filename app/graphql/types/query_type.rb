@@ -6,4 +6,6 @@ Types::QueryType = GraphQL::ObjectType.define do
   field :listarCargos, !types[Types::CargoType] do
     resolve -> (_, _, _) { Cargo.all.order(:id) }
   end
+
+  field :buscarCargo, function: Resolvers::BuscarCargo.new
 end

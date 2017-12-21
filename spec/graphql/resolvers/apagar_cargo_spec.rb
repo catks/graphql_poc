@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Resolvers::ApagaCargo do
+RSpec.describe Resolvers::ApagarCargo do
   let(:instance) { described_class.new }
   let(:args) do
     {

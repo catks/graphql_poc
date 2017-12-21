@@ -4,9 +4,7 @@ module DB
       include Interactor
 
       def call
-        cargo = ::Cargo.find(context.id)
-        cargo.destroy
-        context.cargo = cargo
+        ::Cargo.destroy(context.id)
       end
     end
   end

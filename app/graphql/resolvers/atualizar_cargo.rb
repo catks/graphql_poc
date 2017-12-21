@@ -1,5 +1,6 @@
-class Resolvers::CriaCargo < GraphQL::Function
+class Resolvers::AtualizarCargo < GraphQL::Function
   # arguments passed as "args"
+  argument :id,     !types.ID
   argument :titulo, !types.String
   argument :descricao, !types.String
 
@@ -11,9 +12,16 @@ class Resolvers::CriaCargo < GraphQL::Function
   # args - are the arguments passed
   # _ctx - is the GraphQL context (which would be discussed later)
   def call(_obj, args, _ctx)
-    Cargo.create!(
+    result = DB::Cargo::Atualizar.call(
+      id: args[:id],
       titulo: args[:titulo],
-      descricao: args[:descricao]
+      descricao: args[:descricao],
     )
+
+    if result.success?
+      result.cargo
+    else
+      GraphQL::ExecutionError.new(result.error)
+    end
   end
 end

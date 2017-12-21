@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe Resolvers::CriaCargo do
+RSpec.describe Resolvers::CriarCargo do
   let(:instance) { described_class.new }
   let(:args) do
     {
