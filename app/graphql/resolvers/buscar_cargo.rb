@@ -1,4 +1,5 @@
 class Resolvers::BuscarCargo < GraphQL::Function
+  complexity 3
   # arguments passed as "args"
   argument :id, !types.ID
 

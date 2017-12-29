@@ -26,6 +26,7 @@ gem 'puma', '~> 3.7'
 
 gem 'graphql', '~> 1.7.7'
 gem 'interactor', '~> 3.0'
+gem 'concurrent-ruby', require: 'concurrent'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
