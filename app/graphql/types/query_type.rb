@@ -9,6 +9,8 @@ Types::QueryType = GraphQL::ObjectType.define do
 
   field :buscarCargo, function: Resolvers::BuscarCargo.new
 
+
+  # Testing Concurrency
   field :sleep, !types.Int do
     description 'Espera por alguns segundos'
 
