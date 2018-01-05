@@ -1,4 +1,4 @@
-module DB
+module Repo
   module Cargo
     class Atualizar
       include Interactor

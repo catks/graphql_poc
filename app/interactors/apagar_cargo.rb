@@ -1,5 +1,5 @@
 class ApagarCargo
   include Interactor::Organizer
 
-  organize AutenticarUsuario, DB::Cargo::Deletar
+  organize AutenticarUsuario, Repo::Cargo::Deletar
 end
