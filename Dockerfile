@@ -8,6 +8,7 @@ RUN apk update \
   linux-headers \
   build-base \
   postgresql-dev \
+  postgresql-client \
   && rm -rf /var/cache/apk/*
 
 WORKDIR /usr/src/app
@@ -20,6 +21,6 @@ RUN bundle install --jobs 2 --retry 1
 
 COPY . .
 
-EXPOSE 3007
+EXPOSE 3010
 
 CMD ["bundle", "exec", "rails", "server", "-p", "3010", "-b", "0.0.0.0"]
